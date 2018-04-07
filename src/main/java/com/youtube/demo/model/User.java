@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 @Access(AccessType.FIELD)
 public class User extends ParentEntity {
 
@@ -24,7 +24,7 @@ public class User extends ParentEntity {
 	@Column(name="second_surname", nullable = true, length=255)
 	private String secondSurname;
 	
-	@Column(name="", nullable = true, length=30)
+	@Column(name="phone", nullable = true, length=30)
 	private String phone;
 	
 	@Column(name="address", nullable = false, length=150)
