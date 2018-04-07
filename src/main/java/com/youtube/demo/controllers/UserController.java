@@ -43,6 +43,16 @@ public class UserController {
 	return	this.userService.findAll();
 	}
 	
+	@RequestMapping(value = "/deleteUser", method = RequestMethod.POST)
+	public void deleteUser(@RequestBody String userJson) throws JsonParseException, JsonMappingException, IOException {
+		this.mapper = new ObjectMapper();
+		User user = this.mapper.readValue(userJson, User.class);
+		
+		
+		this.userService.deleteUser(user.getId());
+	}
+	
+	
 	private boolean validate(User user) {
 		boolean isValid = true;
 		if(StringUtils.trimToNull(user.getFirstName()) == null) {
